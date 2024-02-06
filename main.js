@@ -159,10 +159,16 @@ class Fractal {
         this.scaleFactorLen = params['scaleFactorLen'];
         this.scaleFactorWidth = params['scaleFactorWidth'];
         
-        this.angleRate = params['angleRate']
-        this.divergence2 = params['divergence2']
+        this.angleRate = params['angleRate'];
+        this.divergence2 = params['divergence2'];
         
-        this.scaleFactorAngleRate = params['scaleFactorAngleRate']
+        this.scaleFactorAngleRate = params['scaleFactorAngleRate'];
+        this.lineWidth *= this.length/193;
+        this.scaleFactorWidth *= 193/this.length;
+        if(this.scaleFactorWidth>0.9){
+            this.scaleFactorWidth = 0.9;
+        }
+        console.log(this.length);
     }
 
     drawAngle = (angle, posx, posy, length) => {
