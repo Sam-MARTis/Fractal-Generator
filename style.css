@@ -1,0 +1,53 @@
+* {
+    margin: 0px;
+    border-width: 0px;
+    box-sizing: border-box;
+}
+
+#canvas1{
+    position: absolute;
+    background-color: black;
+    text-shadow: 100px;
+    transition-duration: 2s;
+}
+#options{
+    position:absolute; 
+    /* top: 20px; */
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.subOption{
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    color: antiquewhite;
+
+}
+label{
+    color: aliceblue;
+    z-index: 1;
+    padding: 5px;
+}
+.checkbox{
+    /* position: relative; */
+    /* margin: 10px; */
+    /* top: 50px; */
+    color: antiquewhite;
+    z-index: 1;
+}
+
+#randomize{
+    /* position: absolute; */
+    z-index: 10;
+    width: 100px;
+    height: 30px;
+    background-color: beige;
+    /* margin: 20px; */
+    border-radius: 10px;
+    
+}
+#randomize:hover{
+    transform: scale(1.1);
+}
