@@ -26,8 +26,9 @@ let randomizeButton = document.getElementById('randomize');
 
 const resetParamValues = () => {
     let scaleLen = .3+ Math.random()*0.5
+    let winRatio = Math.min(window.innerWidth, window.innerHeight)/900;
     paramValues = {
-        'lineWidth' : (5 + Math.random()*3)*(Math.min(window.innerWidth, window.innerHeight)/900)**0.7,
+        'lineWidth' : (6 + Math.random()*3)*((winRatio**0.5)*(winRatio<1)+(winRatio**0.8)*(winRatio>=1)) ,
         'scaleFactorLen' : scaleLen,
         'scaleFactorWidth' : (0.3+ Math.random()*0.4)/((1+scaleLen)),
        
