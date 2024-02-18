@@ -46,6 +46,15 @@ const rotate =()=>{
 window.onload = () => {
     canvas =document.getElementById('canvas1');
     ctx = canvas.getContext('2d');
+    devicePixelRatio = window.devicePixelRatio || 1;
+
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+
+    ctx.scale(devicePixelRatio, devicePixelRatio);
 
 
     resetParamValues();
