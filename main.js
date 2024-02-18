@@ -6,6 +6,7 @@ let offset = 0;
 let paramValues = new Object();
 let rotateNow;
 let autoNow;
+let devicePixelRatio;
 
 
 
@@ -69,8 +70,13 @@ window.onload = () => {
 
 
 const reset = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+
+    ctx.scale(devicePixelRatio, devicePixelRatio);
     ctx.lineCap="square";
     ctx.lineDashOffset=30;
     ctx.shadowBlur = 0;
