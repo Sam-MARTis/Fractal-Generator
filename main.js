@@ -15,8 +15,8 @@ const getRandomInt = (rangeL, rangeH) =>{
 }
 
 let totalCounts = 0;
-let countLimit = 6;
-let branches = getRandomInt(3, 8);
+let countLimit = 5;
+let branches = getRandomInt(2, 8);
 
 let color = `hsl(${Math.random()*360}, 100%, 50%)`
 let randomizeButton = document.getElementById('randomize');
@@ -26,16 +26,16 @@ let randomizeButton = document.getElementById('randomize');
 
 
 const resetParamValues = () => {
-    let scaleLen = .3+ Math.random()*0.5
+    let scaleLen = .4+ Math.random()*0.5
     let winRatio = Math.min(window.innerWidth, window.innerHeight)/900;
     paramValues = {
         'lineWidth' : (6 + Math.random()*3)*((winRatio**0.5)*(winRatio<1)+(winRatio**0.8)*(winRatio>=1)) ,
         'scaleFactorLen' : scaleLen,
-        'scaleFactorWidth' : (0.3+ Math.random()*0.4)/((1+scaleLen)),
+        'scaleFactorWidth' : (0.5+ Math.random()*0.4)/((1+scaleLen)),
        
-        'angleRate' : 0.2+Math.random()*5,
-        'divergence1' : Math.random()*3.14,
-        'divergence2' : Math.random()*3.14,
+        'angleRate' : 0.5 +Math.random()*5,
+        'divergence1' : 0.5+Math.random()*3.14,
+        'divergence2' : 0.5+Math.random()*3.14,
         'scaleFactorAngleRate' : 200*Math.random(),
         'color' : `hsl(${Math.random()*560}, 100%, 50%)`
     }
@@ -99,11 +99,11 @@ setInterval(incSize, 10)
 const randomize = () =>{
     ctx.clearRect(0, 0, window.width, window.height);
     
-    let newBranches = 3 +getRandomInt(0, 5);
+    let newBranches = 2+ getRandomInt(0, 8);
     color = `hsl(${Math.random()*360}, 100%, 50%)`;
     offset = 3.14*(Math.random()>0.5);
     while (newBranches== branches){
-        newBranches = 3 +getRandomInt(0, 5);
+        newBranches = 2+ +getRandomInt(0, 8);
     }
     branches = newBranches;
     resetParamValues()
